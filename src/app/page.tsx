@@ -1,103 +1,152 @@
 import Image from "next/image";
+import NavBar from "./components/navbar";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <NavBar />
+      <div className="min-h-screen p-6 sm:p-12 font-[family-name:var(--font-geist-sans)]  bg-blue-50">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mt-20 max-w-7xl mx-auto">
+          <div className="w-full lg:w-4/9">
+            <h1 className="text-1xl font-bold text-gray-700">Brand Name</h1>
+            <h2 className="text-3xl font-semibold text-gray-800 mt-5">
+              Campaign Title
+            </h2>
+            <p className="text-gray-600 leading-relaxed mt-3 tracking-wider text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              euismod, nunc at fermentum convallis, urna lacus fringilla nulla,
+              sed ultricies erat metus non eros. Proin vitae nunc eget justo
+              tincidunt imperdiet. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Cras sit amet sapien ac
+              arcu tincidunt fermentum vel et magna. Cras sit amet sapien ac
+              arcu tincidunt fermentum vel et magna.
+            </p>
+            <p className="text-gray-600 leading-relaxed mt-1 text-justify tracking-wider">
+              Nullam non velit id odio tincidunt accumsan. Quisque a dolor ac
+              purus tristique ultrices. Aenean nec felis at magna laoreet
+              tincidunt. Suspendisse potenti. Sed nec est ac metus laoreet
+              euismod non et purus. Integer facilisis enim at neque pretium
+              dignissim. Duis imperdiet nibh nec justo convallis, ut dignissim
+              nulla feugiat. Duis imperdiet nibh nec justo convallis, ut
+              dignissim nulla feugiat.
+            </p>
+            <div className="flex flex-row justify-between mt-4 items-center text-sm">
+              <p className="text-gray-900 font-bold">
+                Request Start Date: MM/DD/YYY
+              </p>
+              <a
+                href="#"
+                className="px-4 py-1 bg-white text-gray-900 rounded font-bold hover:bg-blue-300 border-1 "
+              >
+                View Campaign Brief
+              </a>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          <div className="w-full lg:w-2/3 flex justify-end">
+            <img
+              src="/images/imf.png"
+              alt="Campaign Visual"
+              width={700}
+              height={700}
+              className="max-w-full object-cover rounded-2xl shadow-lg"
             />
-            Deploy now
-          </a>
+          </div>
+        </div>
+      </div>
+      <div className=" p-6 sm:p-12 font-[family-name:var(--font-geist-sans)]  bg-white">
+        <div className="flex flex-col lg:flex-col gap-12 max-w-7xl mx-auto">
+          <div>
+            <h2 className="text-3xl font-semibold text-gray-800 text-left">
+              Deliverable Requested
+            </h2>
+          </div>
+          <div className="items-center flex flex-col lg:flex-col">
+            <div className="flex flex-col gap-6 p-4 rounded-lg w-full max-w-xl">
+              {/* Shared styles for platform entries */}
+              {[
+                {
+                  name: "Instagram",
+                  logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg",
+                  description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis nisl feugiat.",
+                  className: "w-9 h-9 object-contain ",
+                  className1: "text-[#E1306C] w-30 font-bold ",
+                },
+                {
+                  name: "TikTok",
+                  logo: "/images/tk.svg",
+                  description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis nisl feugiat.",
+                  className: "w-12 h-12 object-contain",
+                  className1: "text-gray-800 w-30 font-bold ",
+                },
+                {
+                  name: "YouTube",
+                  logo: "/images/yt.svg",
+                  description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis nisl feugiat.",
+                  className: "w-10 h-10 object-contain",
+                  className1: "text-[#FF0000] w-30 font-bold ",
+                },
+              ].map((platform, index) => (
+                <div key={index} className="flex items-center gap-3 ">
+                  <img
+                    src={platform.logo}
+                    alt={`${platform.name} Logo`}
+                    className={platform.className}
+                  />
+                  <div className="flex items-center ml-2">
+                    <p className={platform.className1}>{platform.name}</p>
+                    <p className="text-gray-600 w-4/5 text-sm leading-relaxed">
+                      {platform.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className=" p-6 sm:p-12 font-[family-name:var(--font-geist-sans)]  bg-white">
+        <div className="flex flex-col lg:flex-col gap-12 max-w-7xl mx-auto">
+          <div>
+            <h2 className="text-3xl font-semibold text-gray-800 text-left">
+              Additional Information
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-justify tracking-wider mt-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              euismod, nunc at fermentum convallis, urna lacus fringilla nulla,
+              sed ultricies erat metus non eros. Proin vitae nunc eget justo
+              tincidunt imperdiet. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Cras sit amet sapien ac
+              arcu tincidunt fermentum vel et magna. Cras sit amet sapien ac
+              arcu tincidunt fermentum vel et magna.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className=" p-6 sm:p-12 font-[family-name:var(--font-geist-sans)]  bg-white items-center">
+        <div className="flex flex-col lg:flex-col gap-3 max-w-7xl mx-auto items-center">
+          <p className="text-3xl font-semibold text-[#293752]">
+            Interested in this Compaign?
+          </p>
+          <p className=" font-semibold text-gray-900">
+            Apply here to participate in this compaign
+          </p>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            className="px-4 py-1 text-white rounded-3xl border border-transparent hover:opacity-90 transition"
+            style={{
+              backgroundImage: "linear-gradient(to right, #00ffff, #7fffd4)", // aqua to aquamarine
+            }}
           >
-            Read our docs
+            Apply
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }
